@@ -1,14 +1,35 @@
 //
 //  main.cpp
 //  SFML_install
-//
+// from https://en.sfml-dev.org/forums/index.php?topic=25557.0
+// tutorial : https://youtu.be/mtEiyDbYMxQ
 //  Created by Leigh Arino on 1/21/22.
 //
 
-#include <iostream>
+#include <SFML/Graphics.hpp>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+int main() {
+    sf::RenderWindow window(sf::VideoMode(640,480), "Awesome Game");
+    
+    while (window.isOpen()) {
+        sf::Event event;
+        // handle all events
+        while (window.pollEvent(event)) {
+            switch(event.type) {
+                case sf::Event::Closed:
+                    window.close();
+                    
+                    break;
+            }
+        }
+        
+        // update the game
+        
+        window.clear();
+        
+        // draw objects here
+        
+        window.display();
+    }
+    
 }
